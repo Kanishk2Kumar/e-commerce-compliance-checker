@@ -1,26 +1,152 @@
 [
   {
     "id": 1,
-    "name": "Urban Outfitters",
-    "website": "urbanoutfitters.com",
-    "logo": "/logos/urban.png",
-    "productsScanned": 125,
-    "date": "7/29/2024"
+    "companyName": "Urban Outfitters",
+    "companyUrl": "urbanoutfitters.com",
+    "companyLogoUrl": "/logos/urban.png",
+    "companyLogoHint": "Urban Outfitters brand logo",
+    "productsScannedCount": 125,
+    "nonCompliantProductsCount": 15,
+    "date": "2024-07-29T10:30:00Z"
   },
   {
     "id": 2,
-    "name": "Nordstrom",
-    "website": "nordstrom.com",
-    "logo": "/logos/nordstrom.png",
-    "productsScanned": 480,
-    "date": "7/28/2024"
+    "companyName": "Nordstrom",
+    "companyUrl": "nordstrom.com",
+    "companyLogoUrl": "/logos/nordstrom.png",
+    "companyLogoHint": "Nordstrom department store logo",
+    "productsScannedCount": 480,
+    "nonCompliantProductsCount": 8,
+    "date": "2024-07-28T14:45:00Z"
   },
   {
     "id": 3,
-    "name": "Best Buy",
-    "website": "bestbuy.com",
-    "logo": "/logos/bestbuy.png",
-    "productsScanned": 1500,
-    "date": "7/27/2024"
+    "companyName": "Best Buy",
+    "companyUrl": "bestbuy.com",
+    "companyLogoUrl": "/logos/bestbuy.png",
+    "companyLogoHint": "Best Buy electronics retailer logo",
+    "productsScannedCount": 1500,
+    "nonCompliantProductsCount": 45,
+    "date": "2024-07-27T09:15:00Z"
+  },
+  {
+    "id": 4,
+    "companyName": "Target",
+    "companyUrl": "target.com",
+    "companyLogoUrl": "/logos/target.png",
+    "companyLogoHint": "Target bullseye logo",
+    "productsScannedCount": 890,
+    "nonCompliantProductsCount": 12,
+    "date": "2024-07-26T16:20:00Z"
+  },
+  {
+    "id": 5,
+    "companyName": "Walmart",
+    "companyUrl": "walmart.com",
+    "companyLogoUrl": "/logos/walmart.png",
+    "companyLogoHint": "Walmart spark logo",
+    "productsScannedCount": 2100,
+    "nonCompliantProductsCount": 67,
+    "date": "2024-07-25T11:00:00Z"
+  },
+  {
+    "id": 6,
+    "companyName": "Amazon",
+    "companyUrl": "amazon.com",
+    "companyLogoUrl": "/logos/amazon.png",
+    "companyLogoHint": "Amazon smiling arrow logo",
+    "productsScannedCount": 3500,
+    "nonCompliantProductsCount": 23,
+    "date": "2024-07-24T13:45:00Z"
+  },
+  {
+    "id": 7,
+    "companyName": "Home Depot",
+    "companyUrl": "homedepot.com",
+    "companyLogoUrl": "/logos/homedepot.png",
+    "companyLogoHint": "Home Depot orange logo",
+    "productsScannedCount": 720,
+    "nonCompliantProductsCount": 5,
+    "date": "2024-07-23T15:30:00Z"
+  },
+  {
+    "id": 8,
+    "companyName": "Apple",
+    "companyUrl": "apple.com",
+    "companyLogoUrl": "/logos/apple.png",
+    "companyLogoHint": "Apple bitten apple logo",
+    "productsScannedCount": 95,
+    "nonCompliantProductsCount": 0,
+    "date": "2024-07-22T10:00:00Z"
+  },
+  {
+    "id": 9,
+    "companyName": "Nike",
+    "companyUrl": "nike.com",
+    "companyLogoUrl": "/logos/nike.png",
+    "companyLogoHint": "Nike swoosh logo",
+    "productsScannedCount": 340,
+    "nonCompliantProductsCount": 18,
+    "date": "2024-07-21T14:15:00Z"
+  },
+  {
+    "id": 10,
+    "companyName": "Adidas",
+    "companyUrl": "adidas.com",
+    "companyLogoUrl": "/logos/adidas.png",
+    "companyLogoHint": "Adidas three stripes logo",
+    "productsScannedCount": 280,
+    "nonCompliantProductsCount": 9,
+    "date": "2024-07-20T12:30:00Z"
+  },
+  {
+    "id": 11,
+    "companyName": "Costco",
+    "companyUrl": "costco.com",
+    "companyLogoUrl": "/logos/costco.png",
+    "companyLogoHint": "Costco warehouse logo",
+    "productsScannedCount": 1100,
+    "nonCompliantProductsCount": 31,
+    "date": "2024-07-19T08:45:00Z"
+  },
+  {
+    "id": 12,
+    "companyName": "Macy's",
+    "companyUrl": "macys.com",
+    "companyLogoUrl": "/logos/macys.png",
+    "companyLogoHint": "Macy's star logo",
+    "productsScannedCount": 560,
+    "nonCompliantProductsCount": 14,
+    "date": "2024-07-18T17:00:00Z"
+  },
+  {
+    "id": 13,
+    "companyName": "Sephora",
+    "companyUrl": "sephora.com",
+    "companyLogoUrl": "/logos/sephora.png",
+    "companyLogoHint": "Sephora black and white logo",
+    "productsScannedCount": 420,
+    "nonCompliantProductsCount": 7,
+    "date": "2024-07-17T13:20:00Z"
+  },
+  {
+    "id": 14,
+    "companyName": "Starbucks",
+    "companyUrl": "starbucks.com",
+    "companyLogoUrl": "/logos/starbucks.png",
+    "companyLogoHint": "Starbucks siren logo",
+    "productsScannedCount": 75,
+    "nonCompliantProductsCount": 2,
+    "date": "2024-07-16T11:45:00Z"
+  },
+  {
+    "id": 15,
+    "companyName": "Microsoft",
+    "companyUrl": "microsoft.com",
+    "companyLogoUrl": "/logos/microsoft.png",
+    "companyLogoHint": "Microsoft four squares logo",
+    "productsScannedCount": 180,
+    "nonCompliantProductsCount": 3,
+    "date": "2024-07-15T09:30:00Z"
   }
 ]
