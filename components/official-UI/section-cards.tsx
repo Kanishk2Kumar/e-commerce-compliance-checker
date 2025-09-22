@@ -1,102 +1,126 @@
-import { IconTrendingDown, IconTrendingUp } from "@tabler/icons-react"
+"use client";
 
-import { Badge } from "@/components/ui/badge"
-import {
-  Card,
-  CardAction,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import React, { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Upload, Scan, Building, Image as ImageIcon } from "lucide-react";
+import { useToast } from "../../hooks/use-toast";
 
-export function SectionCards() {
+export default function NewScanHistory(): JSX.Element {
+  const [companyName, setCompanyName] = useState("");
+  const [companyUrl, setCompanyUrl] = useState("");
+  const [logoFile, setLogoFile] = useState<File | null>(null);
+  const { toast } = useToast();
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setLogoFile(file);
+      toast({
+        title: "Logo Selected",
+        description: file.name,
+      });
+    }
+  };
+
+  const handleScan = () => {
+    if (!companyName || !companyUrl) {
+      toast({
+        title: "Missing Information",
+        description: "Please provide both company name and URL.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "Form Submitted",
+      description: `Company: ${companyName}, URL: ${companyUrl}`,
+    });
+
+    // Reset form
+    setCompanyName("");
+    setCompanyUrl("");
+    setLogoFile(null);
+  };
+
   return (
-    <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Total Revenue</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            $1,250.00
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Trending up this month <IconTrendingUp className="size-4" />
+    <Card className="w-full">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2 text-xl" data-testid="text-form-title">
+          <Building className="h-6 w-6" />
+          New Compliance Scan
+        </CardTitle>
+      </CardHeader>
+
+      <CardContent className="space-y-6">
+        {/* Company name + URL */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <Label htmlFor="company-name">Company Name</Label>
+            <Input
+              id="company-name"
+              data-testid="input-company-name"
+              placeholder="Enter company name"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+            />
           </div>
-          <div className="text-muted-foreground">
-            Visitors for the last 6 months
+
+          <div className="space-y-2">
+            <Label htmlFor="company-url">Website URL</Label>
+            <Input
+              id="company-url"
+              data-testid="input-company-url"
+              placeholder="https://example.com"
+              type="url"
+              value={companyUrl}
+              onChange={(e) => setCompanyUrl(e.target.value)}
+            />
           </div>
-        </CardFooter>
-      </Card>
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>New Customers</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            1,234
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingDown />
-              -20%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Down 20% this period <IconTrendingDown className="size-4" />
+        </div>
+
+        {/* Logo upload with preview */}
+        <div className="space-y-2">
+          <Label htmlFor="logo-upload">Company Logo (Optional)</Label>
+          <div className="flex items-center gap-4">
+            <label
+              htmlFor="logo-upload"
+              className="flex items-center gap-2 px-4 py-2 border rounded-md cursor-pointer hover:bg-muted"
+            >
+              <ImageIcon className="w-4 h-4" />
+              <span>{logoFile ? "Change Logo" : "Upload Logo"}</span>
+            </label>
+            <Input
+              id="logo-upload"
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleFileUpload}
+            />
+            {logoFile && (
+              <span className="text-sm text-muted-foreground">
+                {logoFile.name}
+              </span>
+            )}
           </div>
-          <div className="text-muted-foreground">
-            Acquisition needs attention
-          </div>
-        </CardFooter>
-      </Card>
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Active Accounts</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            45,678
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Strong user retention <IconTrendingUp className="size-4" />
-          </div>
-          <div className="text-muted-foreground">Engagement exceed targets</div>
-        </CardFooter>
-      </Card>
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Growth Rate</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            4.5%
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingUp />
-              +4.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Steady performance increase <IconTrendingUp className="size-4" />
-          </div>
-          <div className="text-muted-foreground">Meets growth projections</div>
-        </CardFooter>
-      </Card>
-    </div>
-  )
+        </div>
+
+        {/* Submit button */}
+        <Button
+  onClick={handleScan}
+  disabled={!companyName || !companyUrl}
+  variant="default"
+  className="w-full md:w-auto"
+  data-testid="button-start-scan"
+>
+  <Scan className="w-4 h-4 mr-2" />
+  Start Compliance Scan
+</Button>
+
+      </CardContent>
+    </Card>
+  );
 }
