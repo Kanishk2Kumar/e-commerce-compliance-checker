@@ -122,7 +122,7 @@ export function ScanHistoryTable({ initialScans }: ScanHistoryTableProps) {
           </div>
         </div>
         
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden px-5">
           <Table>
             <TableHeader className="bg-muted/50">
               <TableRow>
