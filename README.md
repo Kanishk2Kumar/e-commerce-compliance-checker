@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Compliance Checker Dashboard – Frontend 🖥️
 
-## Getting Started
+This is the **frontend** for the Automated Compliance Checker — a **web-based dashboard** built to provide regulators with a user-friendly interface for initiating compliance scans and monitoring results.
 
-First, run the development server:
+<img width="1919" height="1139" alt="Screenshot 2025-09-24 074150" src="https://github.com/user-attachments/assets/6dc91797-456d-493e-a632-811a6689db1d" />
+<img width="1919" height="1100" alt="Screenshot 2025-09-24 074228" src="https://github.com/user-attachments/assets/40089f30-23e3-46b2-91ba-feb6e0431747" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Initiate Scans**  
+  Users can specify a target e-commerce website and a range of products to scan.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **View Scan History**  
+  A comprehensive table displays all past and ongoing scans with their status and key metrics.
 
-## Learn More
+- **Detailed Reporting**  
+  Users can drill down into specific scans to view detailed compliance reports and flagged violations.
 
-To learn more about Next.js, take a look at the following resources:
+- **Clean & Responsive UI**  
+  Built with a modern design for a clear and intuitive user experience on any device.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+| Category     | Technology |
+|--------------|------------|
+| **Framework** | Next.js |
+| **Library**   | React |
+| **Styling**   | Tailwind CSS |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Backend Link: https://github.com/Kanishk2Kumar/e-commerce-compliance-checker-backend
